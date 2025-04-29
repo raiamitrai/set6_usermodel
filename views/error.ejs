@@ -1,0 +1,16 @@
+<%- include('layout', { title: 'Error' }) %>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-8 m-auto text-center">
+            <h1 class="display-4 mb-4">Error</h1>
+            <p class="lead"><%= message %></p>
+            <% if (Object.keys(error).length > 0) { %>
+                <div class="alert alert-danger">
+                    <pre><%= JSON.stringify(error, null, 2) %></pre>
+                </div>
+            <% } %>
+            <hr class="my-4">
+            <a href="/" class="btn btn-primary">Go Home</a>
+        </div>
+    </div>
+</div> 

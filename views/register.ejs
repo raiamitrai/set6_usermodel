@@ -1,0 +1,56 @@
+<%- include('layout', { title: 'Register' }) %>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3">Register</h1>
+            <form action="/users/register" method="POST">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        class="form-control"
+                        placeholder="Enter Username"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Enter Password"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender" name="gender" required>
+                        <option value="">Choose...</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="number" class="form-label">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="number"
+                        name="number"
+                        class="form-control"
+                        placeholder="Enter Phone Number"
+                        required
+                    />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block w-100">Register</button>
+            </form>
+            <p class="mt-4">
+                Have An Account? <a href="/users/login">Login</a>
+            </p>
+        </div>
+    </div>
+</div> 

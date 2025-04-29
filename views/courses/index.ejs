@@ -1,0 +1,26 @@
+<%- include('../layout', { title: 'Courses' }) %>
+<div class="container">
+    <h1 class="mb-4">Courses</h1>
+    <% if (typeof user != 'undefined') { %>
+        <a href="/courses/new" class="btn btn-success mb-4">Add New Course</a>
+    <% } %>
+    
+    <div class="row">
+        <% courses.forEach(course => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="<%= course.image %>" class="card-img-top" alt="<%= course.courseName %>" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= course.courseName %></h5>
+                        <p class="card-text">
+                            <strong>Price:</strong> $<%= course.price %><br>
+                            <strong>Duration:</strong> <%= course.duration %><br>
+                            <strong>Start Date:</strong> <%= course.courseStartDate.toLocaleDateString() %>
+                        </p>
+                        <a href="/courses/<%= course._id %>" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div> 

@@ -1,0 +1,21 @@
+<%- include('layout', { title: 'Welcome' }) %>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-8 m-auto text-center">
+            <h1 class="display-4 mb-4">Welcome to Course Management System</h1>
+            <p class="lead">Manage your courses with ease</p>
+            <hr class="my-4">
+            <% if (typeof user == 'undefined') { %>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <a href="/users/login" class="btn btn-primary btn-lg">Login</a>
+                    <a href="/users/register" class="btn btn-secondary btn-lg">Register</a>
+                </div>
+            <% } else { %>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <a href="/courses" class="btn btn-primary btn-lg">View Courses</a>
+                    <a href="/courses/new" class="btn btn-success btn-lg">Add New Course</a>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div> 
